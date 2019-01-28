@@ -66,6 +66,8 @@ public class RouteSearchParameters {
     private BordersExtractor.Avoid _avoidBorders = BordersExtractor.Avoid.NONE;
 
     private int _alternativeRoutes = -1;
+    private double _alternativeRoutesWeightFactor = 1.4;
+    private double _alternativeRoutesShareFactor = 0.6;
 
     private String _options;
 
@@ -174,6 +176,22 @@ public class RouteSearchParameters {
 
     public void setAlternativeRoutes(int _alternativeRoutes) {
         this._alternativeRoutes = _alternativeRoutes;
+    }
+
+    public double getAlternativeRoutesWeightFactor() {
+        return _alternativeRoutesWeightFactor;
+    }
+
+    public void set_alternativeRoutesWeightFactor(double _alternativeRoutesWeightFactor) {
+        this._alternativeRoutesWeightFactor = _alternativeRoutesWeightFactor;
+    }
+
+    public double getAlternativeRoutesShareFactor() {
+        return _alternativeRoutesShareFactor;
+    }
+
+    public void set_alternativeRoutesShareFactor(double _alternativeRoutesShareFactor) {
+        this._alternativeRoutesShareFactor = _alternativeRoutesShareFactor;
     }
 
     public String getOptions() {
@@ -413,6 +431,20 @@ public class RouteSearchParameters {
                 _alternativeRoutes = json.getInt("alternative_routes");
             } catch (Exception ex) {
                 throw new ParameterValueException(RoutingErrorCodes.INVALID_PARAMETER_FORMAT, "alternative_routes", json.getString("alternative_routes"));
+            }
+            if (json.has("alternative_routes_weight_factor")) {
+                try {
+                    _alternativeRoutesWeightFactor = json.getDouble("alternative_routes_weight_factor");
+                } catch (Exception ex) {
+                    throw new ParameterValueException(RoutingErrorCodes.INVALID_PARAMETER_FORMAT, "alternative_routes_weight_factor", json.getString("alternative_routes_weight_factor"));
+                }
+            }
+            if (json.has("alternative_routes_share_factor")) {
+                try {
+                    _alternativeRoutesShareFactor = json.getDouble("alternative_routes_share_factor");
+                } catch (Exception ex) {
+                    throw new ParameterValueException(RoutingErrorCodes.INVALID_PARAMETER_FORMAT, "alternative_routes_share_factor", json.getString("alternative_routes_share_factor"));
+                }
             }
         }
 
