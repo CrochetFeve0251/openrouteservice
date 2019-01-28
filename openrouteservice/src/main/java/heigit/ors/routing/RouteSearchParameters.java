@@ -65,6 +65,7 @@ public class RouteSearchParameters {
     private int[] _avoidCountries = null;
     private BordersExtractor.Avoid _avoidBorders = BordersExtractor.Avoid.NONE;
 
+//  TAKB: parameters weight factor and share factor seem to be ignored by the algorithm, further testing required.
     private int _alternativeRoutes = -1;
     private double _alternativeRoutesWeightFactor = 1.4;
     private double _alternativeRoutesShareFactor = 0.6;
