@@ -63,7 +63,7 @@ public class RouteResultBuilder
         return createRouteResultSet(routes.get(0), request, extras);
     }
 
-    public RouteResult createRouteResult(List<GHResponse> routes, RoutingRequest request, List<RouteExtraInfo> extras) throws Exception {
+  public RouteResult createRouteResult(List<GHResponse> routes, RoutingRequest request, List<RouteExtraInfo> extras) throws Exception {
 
         RouteResult result = new RouteResult(request.getExtraInfo());
 

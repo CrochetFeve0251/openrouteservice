@@ -9,9 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added support for ISO 3166-1 Alpha-2 / Alpha-3 codes for routing directions option avoid_countries (Issue #195)
 - Added support for GH alternative_route algorithm (Issue #377)
 ### Fixed
+- Fixed `geometry_simplify` parameter, which had no effect before. `geometry_simplify` is incompatible with `extra_info` (#381)
 ### Changed
 - Updated rural speed limit in France to be 80km/h (Issue #355)
 - Modified smoothing and buffer distances for small isochrones, aswell as other fixes for smaller isochrones (Issue #382)
+- Updated pom to use correct opengeo repo and reordered so this is the last in the list, and use latest ORS-Graphhopper library (Issue #398)
+- Added /directions as an endpoint for routing (Issue #384)
 ### Deprecated
 
 ## [4.7.2] - 2018-12-10
@@ -170,11 +173,10 @@ are attached to roads. (Issue #162)
 - Consider turn restrictions if optimized=false is passed.
 
 ### Changed
-- 
+-
 
 ### Removed
-- 
+-
 
 ### Deprecated
-- 
-
+-
